@@ -2190,7 +2190,7 @@ li.categoryBar-list-item {
   }
 }
 
-/* By Fomalhaut版权大小 */
+/* By ༺云༒川༻版权大小 */
 .copyright {
   font-size: 16px;
 }
@@ -2261,17 +2261,7 @@ span.card-clock-weather {
   border-bottom: 2px solid var(--theme-color) !important;
 }
 
-/* 关于页面区块 */
-.about_page {
-  background: #fafafa;
-  border-radius: 20px;
-  padding: 12px;
-  margin: 5px;
-  border: 2px solid #a0a0a0;
-}
-[data-theme="dark"] .about_page {
-  background: #252525;
-}
+
 /* 首页文章信息彩色图标右边相隔5px */
 .post-ui-icon {
   margin-right: 2px;
@@ -2652,7 +2642,7 @@ i.fas.fa-cog.right_side {
 
 /* 图片圆角和边框 */
 .post-content img,
-#article-container:has(.fj-gallery, #gitZone, .about_page) img {
+#article-container:has(.fj-gallery, #gitZone) img {
   border-radius: 12px;
   border: 0.5px solid #80808030;
 }
@@ -3011,4 +3001,100 @@ hr:before {
 .github-badge img:hover {
   scale: 1.05;
   transition: all 0.3s ease-in-out;
+}
+
+/* 视频播放模块样式 */
+.card-widget.card-video-player {
+  padding: 20px;
+}
+
+.card-widget.card-video-player .video-player-container {
+  margin-top: 15px;
+}
+
+.card-widget.card-video-player .video-wrapper {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.card-widget.card-video-player .video-error-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-widget.card-video-player .video-error-message i {
+  font-size: 24px;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-widget.card-video-player .video-error-message span {
+  color: #666;
+  font-size: 14px;
+}
+
+.card-widget.card-video-player .video-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-widget.card-video-player .video-btn {
+  transition: all 0.3s ease;
+  font-size: 14px;
+  min-width: 80px;
+}
+
+.card-widget.card-video-player .video-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-widget.card-video-player .video-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.card-widget.card-video-player #videoPlayer {
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-widget.card-video-player #videoPlayer:focus {
+  outline: none;
+}
+
+.card-widget.card-video-player .item-headline {
+  margin-bottom: 15px;
+}
+
+.card-widget.card-video-player .item-headline span {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--font-color);
+}
+
+.card-widget.card-video-player .icon {
+  margin-right: 8px;
+}
+
+/* 暗色主题下的错误消息样式 */
+[data-theme="dark"] .card-widget.card-video-player .video-error-message {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+[data-theme="dark"] .card-widget.card-video-player .video-error-message span {
+  color: #ccc;
 }

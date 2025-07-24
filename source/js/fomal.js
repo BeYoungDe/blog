@@ -54,7 +54,7 @@ function tonav() {
     position = scroll;
   });
   //修复没有弄右键菜单的童鞋无法回顶部的问题
-  document.getElementById("page-name").innerText = document.title.split(" | Fomalhaut🥝")[0];
+  document.getElementById("page-name").innerText = document.title.split(" | ༺云༒川༻🥝")[0];
 }
 
 function scrollToTop() {
@@ -1113,13 +1113,13 @@ function changeMouseMode() {
 var now1 = new Date();
 
 function createtime1() {
-  var grt = new Date("08/09/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  var grt = new Date("07/21/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
   now1.setTime(now1.getTime() + 250);
   var days = (now1 - grt) / 1000 / 60 / 60 / 24;
   var dnum = Math.floor(days);
 
   var ascll = [
-    `欢迎来到Fomalhaut🥝の小家!`,
+    `欢迎来到༺云༒川༻🥝の小家!`,
     `Future is now 🍭🍭🍭`,
     `
         
@@ -1133,7 +1133,7 @@ function createtime1() {
     "小站已经苟活",
     dnum,
     "天啦!",
-    "©2022 By Fomalhaut",
+    "©2025 By ༺云༒川༻",
   ];
 
   setTimeout(
@@ -1172,7 +1172,7 @@ function createtime2() {
   setTimeout(
     console.warn.bind(
       console,
-      "%c ⚡ Powered by Fomalhaut🥝 %c 你正在访问Fomalhaut🥝の小家",
+      "%c ⚡ Powered by ༺云༒川༻🥝 %c 你正在访问༺云༒川༻🥝の小家",
       "color:white; background-color:#f0ad4e",
       ""
     )
@@ -1282,8 +1282,8 @@ function share_() {
   try {
     // 截取标题
     var title = document.title;
-    var subTitle = title.endsWith("| Fomalhaut🥝") ? title.substring(0, title.length - 14) : title;
-    navigator.clipboard.writeText('Fomalhaut🥝的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
+    var subTitle = title.endsWith("| ༺云༒川༻🥝") ? title.substring(0, title.length - 14) : title;
+    navigator.clipboard.writeText('༺云༒川༻🥝的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
     new Vue({
       data: function () {
         this.$notify({
@@ -2044,7 +2044,7 @@ function toChinaDay(d) { // 日 => \u65e5
 
 /**
 
-* 年份转生肖[!仅能大致转换] => 精确划分生肖分界线是“立春”
+* 年份转生肖[!仅能大致转换] => 精确划分生肖分界线是"立春"
 
 * @param y year
 
@@ -2519,12 +2519,12 @@ if (m == 12 && dd == 25) {//圣诞节
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
-if (m == 8 && dd == 11) {//站长生日
-  if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐！🥝");
-    sessionStorage.setItem("isPopupWindow", "1");
-  }
-}
+// if (m == 10 && dd == 5) {//站长生日
+//   if (sessionStorage.getItem("isPopupWindow") != "1") {
+//     Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐！🥝");
+//     sessionStorage.setItem("isPopupWindow", "1");
+//   }
+// }
 if (m == 6 && dd == 30) {//小猫咪生日
   if (sessionStorage.getItem("isPopupWindow") != "1") {
     Swal.fire("祝小猫咪" + (y - 1999).toString() + "岁生日快乐！🐱");
@@ -2590,6 +2590,13 @@ if ((lunar["IMonthCn"] == "九月" && lunar["IDayCn"] == "初九")) {
   //重阳节
   if (sessionStorage.getItem("isPopupWindow") != "1") {
     Swal.fire("重阳节快乐\n独在异乡为异客，每逢佳节倍思亲");
+    sessionStorage.setItem("isPopupWindow", "1");
+  }
+}
+if ((lunar["IMonthCn"] == "十月" && lunar["IDayCn"] == "初五")) {
+  //站长生日
+  if (sessionStorage.getItem("isPopupWindow") != "1") {
+    Swal.fire("祝站长" + (y - 2003).toString() + "岁生日快乐！🥝");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
@@ -2716,7 +2723,7 @@ class Cursor {
 //   clearTimeout(newYearTimer);
 //   if (!document.querySelector('#newYear')) return;
 //   // 新年时间戳 and 星期对象
-//   let newYear = new Date('2023-01-22 00:00:00').getTime() / 1000,
+//   let newYear = new Date('2026-01-22 00:00:00').getTime() / 1000,
 //     week = { 0: '周日', 1: '周一', 2: '周二', 3: '周三', 4: '周四', 5: '周五', 6: '周六' }
 
 //   time();
@@ -2785,11 +2792,11 @@ var now = new Date();
 function createtime() {
   // 当前时间
   now.setTime(now.getTime() + 1000);
-  var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
+  var start = new Date("07/01/2025 00:00:00"); // 旅行者1号开始计算的时间
   var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
   var unit = (dis / 149600000).toFixed(6);  // 天文单位
   // 网站诞生时间
-  var grt = new Date("08/09/2022 00:00:00");
+  var grt = new Date("07/21/2025 00:00:00");
   var days = (now - grt) / 1e3 / 60 / 60 / 24,
     dnum = Math.floor(days),
     hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,
@@ -3407,7 +3414,35 @@ function createWinbox() {
 {% folding cyan, 查看二次元背景 %}
 <div class="bgbox">
 <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/home_bg.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/home_bg.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm1.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm1.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm2.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm2.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm3.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm3.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm4.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm4.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm5.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm5.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm6.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm6.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm7.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm7.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm8.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm8.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm9.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm9.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm10.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm10.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm11.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm11.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm12.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm12.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm13.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm13.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm14.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm14.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm15.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm15.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm16.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm16.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm17.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm17.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm18.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm18.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm19.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm19.webp)')"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm20.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm20.webp)')"></a>
+</div>
+{% endfolding %}
 
+<h3>1.1. 二次元视频背景</h3>
+{% folding cyan, 查看二次元视频背景 %}
+<div class="bgbox">
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/video1.jpg)" class="imgbox" onclick="changeBg('url(/videos/anime/video1.mp4)')" title="二次元视频1"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/video2.jpg)" class="imgbox" onclick="changeBg('url(/videos/anime/video2.mp4)')" title="二次元视频2"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/video3.jpg)" class="imgbox" onclick="changeBg('url(/videos/anime/video3.mp4)')" title="二次元视频3"></a>
 </div>
 {% endfolding %}
 

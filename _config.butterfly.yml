@@ -19,7 +19,7 @@ menu:
   社交 || icon-shejiaoxinxi || faa-tada || hide:
     朋友圈: /social/fcircle/ || icon-pengyouquan || faa-tada
     留言板: /comments/ || icon-liuyan || faa-tada
-    友人帐: /social/link/ || icon-lianjie || faa-tada
+    # 友人帐: /social/link/ || icon-lianjie || faa-tada
   网站 || icon-wangye || faa-tada || hide:
     网站统计: /site/census/ || icon--tongjibiao || faa-tada
     文章统计: /site/echarts/ || icon-shujutongji1 || faa-tada
@@ -27,7 +27,6 @@ menu:
   个人 || icon-maoliang || faa-tada || hide:
     唠叨: /personal/bb/ || icon-qunliaotian || faa-tada
     恋爱小屋: /personal/love/ || icon-love-sign || faa-tada
-    关于: /personal/about/ || icon-paperplane || faa-tada
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -50,23 +49,23 @@ copy:
 # social settings (社交圖標設置)
 # formal:
 #   icon: link || the description
-social:
-  # Github: https://github.com/fomalhaut1998 || icon-github || faa-tada
-  微信: /assets/QRCode.jpg || icon-weixin || faa-tada
-  QQ: https://res.abeim.cn/api/qq/?qq=1174008660 || icon-QQ || faa-tada
-  B站: https://space.bilibili.com/220757832 || icon-bilibili || faa-tada
-  QQ邮箱: mailto:1174008660@qq.com || icon-youxiang || faa-tada
-  力扣: https://leetcode.cn/u/fomalhaut1998 || icon-leetcode || faa-tada
-  # 微博: https://weibo.com/u/6473136435 || icon-weibo || faa-tada
-  # 知乎: https://www.zhihu.com/people/liang-jia-chao-19 || icon-shejiaotubiao-10 || faa-tada
-  # RSS: /atom.xml || icon-RSS || faa-tada
+# social:
+#   # Github: https://github.com/fomalhaut1998 || icon-github || faa-tada
+#   微信: /assets/QRCode.jpg || icon-weixin || faa-tada
+#   QQ: https://res.abeim.cn/api/qq/?qq=1174008660 || icon-QQ || faa-tada
+#   B站: https://space.bilibili.com/220757832 || icon-bilibili || faa-tada
+#   QQ邮箱: mailto:1174008660@qq.com || icon-youxiang || faa-tada
+#   力扣: https://leetcode.cn/u/fomalhaut1998 || icon-leetcode || faa-tada
+#   # 微博: https://weibo.com/u/6473136435 || icon-weibo || faa-tada
+#   # 知乎: https://www.zhihu.com/people/liang-jia-chao-19 || icon-shejiaotubiao-10 || faa-tada
+#   # RSS: /atom.xml || icon-RSS || faa-tada
 
-  # iconfont icon-github: https://github.com/fomalhaut1998 || Github
-  # iconfont icon-youjian: mailto:1174008660@qq.com || QQ邮箱
-  # iconfont icon-tv: https://space.bilibili.com/220757832 || B站
-  # iconfont icon-leetcode: https://leetcode.cn/u/fomalhaut1998/ || 力扣
-  # iconfont icon-weibo: https://weibo.com/u/6473136435 || 微博
-  # iconfont icon-shejiaotubiao-46: https://www.zhihu.com/people/liang-jia-chao-19 || 知乎
+#   # iconfont icon-github: https://github.com/fomalhaut1998 || Github
+#   # iconfont icon-youjian: mailto:1174008660@qq.com || QQ邮箱
+#   # iconfont icon-tv: https://space.bilibili.com/220757832 || B站
+#   # iconfont icon-leetcode: https://leetcode.cn/u/fomalhaut1998/ || 力扣
+#   # iconfont icon-weibo: https://weibo.com/u/6473136435 || 微博
+#   # iconfont icon-shejiaotubiao-46: https://www.zhihu.com/people/liang-jia-chao-19 || 知乎
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -113,7 +112,7 @@ favicon:
 
 # Avatar (頭像)
 avatar:
-  img: https://tuchuang.voooe.cn/images/2023/01/02/avatar.webp
+  img: /assets/head.jpg
   effect: false
 
 # Disable all banner image
@@ -671,7 +670,7 @@ subtitle:
   source: false
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
   sub:
-    - "Welcome to Fomalhaut🥝のTiny Home!🤣🤣🤣"
+    - "Welcome to ༺云༒川༻🥝のTiny Home!🤣🤣🤣"
     - "Hope you have a nice day!🍭🍭🍭"
 
 # Loading Animation (加載動畫)
@@ -699,12 +698,12 @@ aside:
     enable: true
     description:
     button:
-      enable: true
+      enable: false
       icon: # fab fa-github
       text: 前往小窝
       link: https://github.com/fomalhaut1998
   card_announcement:
-    enable: true
+    enable: false
     content: <center><b>--- 主域名 ---<br><a href="https://www.fomal.cc" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">fomal.cc</font></a>&nbsp;|&nbsp;<a href="https://www.fomal.cn" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">fomal.cn</font></a><br>--- 备用域名 ---<br><a href="https://netlify.fomal.cc" title="此线路部署于Netlify" class="anno_content"><font color="#5ea6e5">netlify.fomal.cc</font></a><br><a href="https://cloudflare.fomal.cc" title="此线路部署于Cloudflare" class="anno_content"><font color="#5ea6e5">cloudflare.fomal.cc</font></a><br>--- 网站安卓APP ---<br>🍧<a href="https://lskypro.acozycotage.net/Fomalhaut/Fomalhaut.apk" title="点这里可以下载网站的安卓APP" class="anno_content"><font color="#5ea6e5">点此下载</font></a>🍧</b></center>
   card_recent_post:
     enable: false
@@ -736,6 +735,9 @@ aside:
   card_weibo:
     enable: false
   card_friend_link: #友链通讯录
+    enable: false
+    sort_order: # Don't modify the setting unless you know
+  card_video_player: #视频播放模块
     enable: true
     sort_order: # Don't modify the setting unless you know
 
@@ -927,7 +929,7 @@ inject:
     - <script async src="//at.alicdn.com/t/c/font_3586335_hsivh70x0fm.js"></script> # js图标引入1
     - <script async src="//at.alicdn.com/t/c/font_3636804_gr02jmjr3y9.js"></script> # js图标引入2
     - <script async src="//at.alicdn.com/t/c/font_3612150_kfv55xn3u2g.js"></script> # js图标引入3
-    - <script async src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script>  # 新年元宝
+    - <script async src="https://cdn.wpon.cn/2025-sucai/Gold-ingot.js"></script>  # 新年元宝
     - <canvas id="universe"></canvas> # 星空画布
     - <canvas id="snow"></canvas> # 雪花画布
     - <script defer src="/js/fomal.js"></script> # 主模块js

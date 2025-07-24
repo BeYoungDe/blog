@@ -1,4 +1,4 @@
-### 🥝的网站目前已经开源啦！！！暂定名为**hexo-theme-Fomalhaut**，原作者网站：[www.fomal.cc](https://www.fomal.cc)，如果你喜欢的话可以帮我点一个免费的Star🌟🌟🌟哦！
+### 🥝的网站目前已经开源啦！！！暂定名为**hexo-theme-༺云༒川༻**，原作者网站：[www.fomal.cc](https://www.fomal.cc)，如果你喜欢的话可以帮我点一个免费的Star🌟🌟🌟哦！
 
 ### 🚧🚧🚧本开源项目并不适合纯小白，需要一定的魔改经验，因此安装之前务必对Hexo框架命令和Butterfly主题比较熟悉，不熟悉的朋友建议提前熟悉[Hexo中文文档](https://hexo.bootcss.com/docs/configuration.html)和[Butterfly主题文档](https://butterfly.js.org/)，以及熟悉本站魔改教程，别上来就问文章怎么写！！！避免各种不必要的麻烦！！！望周知！！！！！！！！！！
 
@@ -131,7 +131,7 @@
   }
   ```
 
-- 页脚时间由`fomal.js`控制，搜索以下代码，将网站诞生时间改为你自己的即可(示例：`2022-08-09`)
+- 页脚时间由`fomal.js`控制，搜索以下代码，将网站诞生时间改为你自己的即可(示例：`2025-07-21`)
 
   ```js
   /* 页脚计时器 start */
@@ -139,11 +139,11 @@
   function createtime() {
     // 当前时间
     now.setTime(now.getTime() + 1000);
-    var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
+    var start = new Date("07/01/2025 00:00:00"); // 旅行者1号开始计算的时间
     var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
     var unit = (dis / 149600000).toFixed(6);  // 天文单位
     // 网站诞生时间
-    var grt = new Date("08/09/2022 00:00:00");
+    var grt = new Date("07/21/2025 00:00:00");
   ...
     let currentTimeHtml = "";
     (currentTimeHtml =
@@ -167,13 +167,13 @@
   var now1 = new Date();
   
   function createtime1() {
-    var grt = new Date("08/09/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+    var grt = new Date("07/21/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
     now1.setTime(now1.getTime() + 250);
     var days = (now1 - grt) / 1000 / 60 / 60 / 24;
     var dnum = Math.floor(days);
   
     var ascll = [
-      `欢迎来到Fomalhaut🥝の小家!`,
+      `欢迎来到༺云༒川༻🥝の小家!`,
       `Future is now 🍭🍭🍭`,
       `
           
@@ -187,7 +187,7 @@
       "小站已经苟活",
       dnum,
       "天啦!",
-      "©2022 By Fomalhaut",
+      "©2022 By ༺云༒川༻",
     ];
   
     setTimeout(
@@ -226,7 +226,7 @@
     setTimeout(
       console.warn.bind(
         console,
-        "%c ⚡ Powered by Fomalhaut🥝 %c 你正在访问Fomalhaut🥝の小家",
+        "%c ⚡ Powered by ༺云༒川༻🥝 %c 你正在访问༺云༒川༻🥝の小家",
         "color:white; background-color:#f0ad4e",
         ""
       )
@@ -274,7 +274,7 @@
   ```markdown
   ---
   title: 唠叨
-  date: 2022-09-08 23:08:13
+  date: 2025-07-21 23:08:13
   comments: false
   ---
   
@@ -406,7 +406,7 @@
 
 ### 项目星标概况
 
-[![Star History Chart](https://api.star-history.com/svg?repos=fomalhaut1998/hexo-theme-Fomalhaut&type=Timeline)](https://star-history.com/#fomalhaut1998/hexo-theme-Fomalhaut&Timeline)
+[![Star History Chart](https://api.star-history.com/svg?repos=fomalhaut1998/hexo-theme-༺云༒川༻&type=Timeline)](https://star-history.com/#fomalhaut1998/hexo-theme-༺云༒川༻&Timeline)
 
 
 
