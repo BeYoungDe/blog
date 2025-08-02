@@ -1133,7 +1133,7 @@ function createtime1() {
     "小站已经苟活",
     dnum,
     "天啦!",
-    "©2025 By ༺云༒川༻",
+    "©2022 By ༺云༒川༻",
   ];
 
   setTimeout(
@@ -2519,12 +2519,12 @@ if (m == 12 && dd == 25) {//圣诞节
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
-// if (m == 10 && dd == 5) {//站长生日
-//   if (sessionStorage.getItem("isPopupWindow") != "1") {
-//     Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐！🥝");
-//     sessionStorage.setItem("isPopupWindow", "1");
-//   }
-// }
+if (m == 8 && dd == 11) {//站长生日
+  if (sessionStorage.getItem("isPopupWindow") != "1") {
+    Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐！🥝");
+    sessionStorage.setItem("isPopupWindow", "1");
+  }
+}
 if (m == 6 && dd == 30) {//小猫咪生日
   if (sessionStorage.getItem("isPopupWindow") != "1") {
     Swal.fire("祝小猫咪" + (y - 1999).toString() + "岁生日快乐！🐱");
@@ -2590,13 +2590,6 @@ if ((lunar["IMonthCn"] == "九月" && lunar["IDayCn"] == "初九")) {
   //重阳节
   if (sessionStorage.getItem("isPopupWindow") != "1") {
     Swal.fire("重阳节快乐\n独在异乡为异客，每逢佳节倍思亲");
-    sessionStorage.setItem("isPopupWindow", "1");
-  }
-}
-if ((lunar["IMonthCn"] == "十月" && lunar["IDayCn"] == "初五")) {
-  //站长生日
-  if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("祝站长" + (y - 2003).toString() + "岁生日快乐！🥝");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
@@ -3434,15 +3427,7 @@ function createWinbox() {
 <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm18.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm18.webp)')"></a>
 <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm19.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm19.webp)')"></a>
 <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm20.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm20.webp)')"></a>
-</div>
-{% endfolding %}
-
-<h3>1.1. 二次元视频背景</h3>
-{% folding cyan, 查看二次元视频背景 %}
-<div class="bgbox">
-<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/video1.jpg)" class="imgbox" onclick="changeBg('url(/videos/anime/video1.mp4)')" title="二次元视频1"></a>
-<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/video2.jpg)" class="imgbox" onclick="changeBg('url(/videos/anime/video2.mp4)')" title="二次元视频2"></a>
-<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/video3.jpg)" class="imgbox" onclick="changeBg('url(/videos/anime/video3.mp4)')" title="二次元视频3"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/wallpaper.jpg)" class="imgbox" onclick="changeBg('url(/videos/anime/wallpaper.mp4)')" title="二次元视频背景"></a>
 </div>
 {% endfolding %}
 
