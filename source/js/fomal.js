@@ -3171,7 +3171,11 @@ let unsplash = "url(https://source.unsplash.com/random/1920x1080/)";
 
 // 更换背景(自己的代码)
 if (localStorage.getItem("blogbg") != undefined) {
-  setBg(localStorage.getItem("blogbg"));
+  if (localStorage.getItem("blogbg_type") === "video") {
+    setVideoBackground();
+  } else {
+    setBg(localStorage.getItem("blogbg"));
+  }
 } else {
   document.getElementById("defineBg").innerText = `:root{
     --default-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/dm14.webp);
@@ -3182,13 +3186,57 @@ if (localStorage.getItem("blogbg") != undefined) {
 }
 // 切换背景主函数
 function changeBg(s) {
+  // 移除可能存在的视频背景
+  const existingVideo = document.getElementById("background-video");
+  if (existingVideo) {
+    existingVideo.remove();
+  }
   // 自定义颜色框
   defineColor = s.charAt(0) == "#" ? s : '#F4D88A';
   setBg(s);
   localStorage.setItem("blogbg", s);
+  localStorage.setItem("blogbg_type", "image");
 }
 // 设置背景属性
 function setBg(s) {
+  const webBg = document.getElementById("web_bg");
+  const bgType = localStorage.getItem("blogbg_type");
+
+  if (bgType === "video" && s) {
+    // 如果是视频背景，确保视频元素存在并设置src
+    let videoElement = document.getElementById("background-video");
+    if (!videoElement) {
+      videoElement = document.createElement("video");
+      videoElement.id = "background-video";
+      videoElement.autoplay = true;
+      videoElement.loop = true;
+      videoElement.muted = true;
+      videoElement.playsInline = true;
+      videoElement.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        background-size: cover;
+      `;
+      webBg.appendChild(videoElement);
+    }
+    videoElement.src = s;
+    webBg.style.backgroundImage = "none"; // 移除图片背景
+  } else {
+    // 否则，设置为图片或颜色背景，并移除视频元素
+    const existingVideo = document.getElementById("background-video");
+    if (existingVideo) {
+      existingVideo.remove();
+    }
+    webBg.style.backgroundImage = s;
+    webBg.style.backgroundColor = "";
+  }
+
   document.getElementById("defineBg").innerText = `:root{
     --default-bg: ${s};
     --darkmode-bg: ${s};
@@ -3250,6 +3298,76 @@ function checkImgExists(imgurl) {
       reject(err);
     }
   })
+}
+
+// 设置视频背景
+function setVideoBackground() {
+  const videoLink = document.getElementById("video-link").value;
+  const webBg = document.getElementById("web_bg");
+
+  // 移除所有现有的背景图片
+  webBg.style.backgroundImage = "none";
+  webBg.style.backgroundColor = "";
+  webBg.style.background = "none"; // 确保清除所有背景样式
+
+  // 移除现有的视频元素
+  const existingVideo = document.getElementById("background-video");
+  if (existingVideo) {
+    existingVideo.remove();
+  }
+
+  if (videoLink) {
+    const videoElement = document.createElement("video");
+    videoElement.id = "background-video";
+    videoElement.autoplay = true;
+    videoElement.loop = true;
+    videoElement.muted = true;
+    videoElement.playsInline = true; // For iOS compatibility
+    videoElement.src = videoLink;
+    videoElement.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      background-size: cover;
+    `;
+    webBg.appendChild(videoElement);
+
+    localStorage.setItem("blogbg", videoLink);
+    localStorage.setItem("blogbg_type", "video");
+
+    new Vue({
+      data: function () {
+        this.$notify({
+          title: "可以啦🍨",
+          message: "切换自定义视频背景成功！",
+          position: 'top-left',
+          offset: 50,
+          showClose: false,
+          type: "success",
+          duration: 5000
+        });
+      }
+    });
+  } else {
+    new Vue({
+      data: function () {
+        this.$notify({
+          title: "链接不对🤣",
+          message: "请输入有效的视频链接！",
+          position: 'top-left',
+          offset: 50,
+          showClose: false,
+          type: "warning",
+          duration: 5000
+        });
+      }
+    });
+  }
 }
 
 // 黑夜霓虹灯开关
@@ -3427,7 +3545,7 @@ function createWinbox() {
 <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm18.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm18.webp)')"></a>
 <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm19.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm19.webp)')"></a>
 <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/dm20.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/dm20.webp)')"></a>
-<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/wallpaper.jpg)" class="imgbox" onclick="changeBg('url(/videos/anime/wallpaper.mp4)')" title="二次元视频背景"></a>
+<a href="javascript:;" rel="noopener external nofollow" style="background-image:url(/videos/anime/wallpaper.png)" class="imgbox" onclick="changeBg('url(/videos/anime/wallpaper.png)')"></a>
 </div>
 {% endfolding %}
 
@@ -3442,7 +3560,16 @@ function createWinbox() {
 </div>
 {% endfolding %}
 
-<h3>3. 萌宠</h3>
+<h3>3. 自定义视频背景</h3>
+{% folding green, 设置视频背景 %}
+<div class="video-background-setting">
+  <input type="text" id="video-link" placeholder="输入视频链接，例如：/videos/anime/wallpaper.mp4" style="width: 80%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+  <button onclick="setVideoBackground()" style="background:var(--theme-color);display:block;width:35%;padding:10px 0;border-radius:30px;color:white;margin: 0 auto;"><i class="fa-solid fa-video"></i>&nbsp;设置视频背景</button>
+</div>
+{% endfolding %}
+<br>
+
+<h3>4. 萌宠</h3>
 
 {% folding cyan, 查看萌宠背景 %}
 <div class="bgbox">
@@ -3451,7 +3578,7 @@ function createWinbox() {
 </div>
 {% endfolding %}
 
-<h3>4. 渐变色</h3>
+<h3>5. 渐变色</h3>
 {% folding cyan, 查看渐变色背景 %}
 <div class="bgbox">
 <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #544a7d, #ffd452)" onclick="changeBg('linear-gradient(to right, #544a7d, #ffd452)')"></a>
@@ -3466,7 +3593,7 @@ function createWinbox() {
 {% endfolding %}
 
 
-<h3>5. 纯色</h3>
+<h3>6. 纯色</h3>
 {% folding cyan, 查看纯色背景 %}
 <div class="bgbox">
 <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ecb1b1" onclick="changeBg('#ecb1b1')"></a> 
@@ -3482,7 +3609,7 @@ function createWinbox() {
 
 
 
-<h3>6. 适配手机</h3>
+<h3>7. 适配手机</h3>
 {% folding cyan, 查看适配手机的背景 %}
 <div class="bgbox">
 <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/mb4.webp)" class="pimgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/mb4.webp)')"></a>
@@ -3491,7 +3618,7 @@ function createWinbox() {
 {% endfolding %}
 
 
-<h3>7. 壁纸API</h3>
+<h3>8. 壁纸API</h3>
 {% folding cyan, 查看壁纸API系列背景 %}
 <div class="bgbox">
 <a id="bingDayBox" rel="noopener external nofollow" style="background-image: ${bingDayBg}" class="box apiBox" onclick="changeBg('${bingDayBg}')"></a>
@@ -3506,7 +3633,7 @@ function createWinbox() {
 {% endfolding %}
 
 
-<h3>8. 自定义背景</h3>
+<h3>9. 自定义背景</h3>
 {% folding cyan, 设置自定义背景 %}
 <p><center>
 <input type="text" id="pic-link" size="70%" maxlength="1000" placeholder="请输入有效的图片链接，如 https://source.fomal.cc/img/home_bg.webp">
@@ -3563,6 +3690,11 @@ function createWinbox() {
 
 // 恢复默认背景
 function resetBg() {
+  // 移除视频背景元素
+  const existingVideo = document.getElementById("background-video");
+  if (existingVideo) {
+    existingVideo.remove();
+  }
   localStorage.removeItem('blogbg');
   reload();
 }
